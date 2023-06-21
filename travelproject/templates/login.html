@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+ <style>
+    body{
+  font-family: Calibre, Helvetica, sans-serif;
+  background-color:grey;
+}
+
+ input[type=text], input[type=password] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 3px solid green;
+        box-sizing: border-box;
+    }
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+ </style>
+</head>
+<body>
+<form action="login" method="post">
+	{% csrf_token %}
+    <center>  <h2>  Log in  </h2> </center>
+     <label> Username </label><br>
+    <input type="text" name="username" placeholder="username"><br>
+     <label> Password </label><br>
+    <input type="text" name="password" placeholder="password"><br>
+    <button type="submit" class="registerbtn">Log In</button>
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
